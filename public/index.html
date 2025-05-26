@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backend API</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Backend API</h1>
+    <p>Welcome to the API documentation. Below are the available endpoints.</p>
+    
+    <h2>Authentication</h2>
+    
+    <div class="endpoint">
+      <h3>Register a new user</h3>
+      <code>POST /api/users/signup</code>
+      <pre>
+{
+  "name": "Example User",
+  "email": "user@example.com",
+  "password": "securePassword123"
+}
+      </pre>
+    </div>
+    
+    <div class="endpoint">
+      <h3>Login</h3>
+      <code>POST /api/users/login</code>
+      <pre>
+{
+  "email": "user@example.com",
+  "password": "securePassword123"
+}
+      </pre>
+    </div>
+    
+    <h2>User Profile</h2>
+    
+    <div class="endpoint">
+      <h3>Get User Profile</h3>
+      <code>GET /api/users/profile</code>
+      <p>Requires Authentication Token</p>
+    </div>
+    
+    <div class="endpoint">
+      <h3>Update User Profile</h3>
+      <code>PATCH /api/users/profile</code>
+      <p>Requires Authentication Token</p>
+      <pre>
+{
+  "name": "Updated Name",
+  "email": "updated@example.com"
+}
+      </pre>
+    </div>
+    
+    <h2>Products</h2>
+    
+    <div class="endpoint">
+      <h3>Get All Products</h3>
+      <code>GET /api/products</code>
+    </div>
+    
+    <div class="endpoint">
+      <h3>Get Product by ID</h3>
+      <code>GET /api/products/:id</code>
+    </div>
+    
+    <div class="endpoint">
+      <h3>Create New Product (Admin only)</h3>
+      <code>POST /api/products</code>
+      <p>Requires Authentication Token with Admin Role</p>
+      <pre>
+{
+  "name": "Product Name",
+  "description": "Product Description",
+  "price": 99.99,
+  "category": "electronics"
+}
+      </pre>
+    </div>
+    
+    <div class="endpoint">
+      <h3>Update Product (Admin only)</h3>
+      <code>PATCH /api/products/:id</code>
+      <p>Requires Authentication Token with Admin Role</p>
+    </div>
+    
+    <div class="endpoint">
+      <h3>Delete Product (Admin only)</h3>
+      <code>DELETE /api/products/:id</code>
+      <p>Requires Authentication Token with Admin Role</p>
+    </div>
+  </div>
+</body>
+</html>
+
+</html>
